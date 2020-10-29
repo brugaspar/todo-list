@@ -1,19 +1,19 @@
-import React, { useState } from 'react'
-import { RiCloseCircleLine } from 'react-icons/ri'
-import { TiEdit } from 'react-icons/ti'
+import React, { useState } from "react"
+import { RiCloseCircleLine } from "react-icons/ri"
+import { TiEdit } from "react-icons/ti"
 
-import TodoForm from './TodoForm'
+import TodoForm from "./TodoForm"
 
 function Todo({ todos, completeTodo, updateTodo, removeTodo }) {
   const [edit, setEdit] = useState({
     id: null,
-    value: ''
+    value: ""
   })
 
   const submitUpdate = value => {
     updateTodo(edit.id, value)
 
-    setEdit({ id: null, value: '' })
+    setEdit({ id: null, value: "" })
   }
 
   if(edit.id) {
@@ -25,8 +25,8 @@ function Todo({ todos, completeTodo, updateTodo, removeTodo }) {
       key={index}  
       className={
         todo.isComplete 
-          ? 'todo-row complete' 
-          : 'todo-row'
+          ? "todo-row complete" 
+          : "todo-row"
       }
     >
       <div key={todo.id} onClick={() => completeTodo(todo.id)}>
